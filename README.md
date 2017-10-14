@@ -1,4 +1,5 @@
 # Music Catalogue App
+[![Build Status](https://travis-ci.org/artigat1/app.music-catalogue.svg?branch=master)](https://travis-ci.org/artigat1/app.music-catalogue)
 
 This is a project created as a playground for all things Angular. Will be using the [CLI](https://github.com/angular/angular-cli), [material](https://github.com/angular/material2) and [flex-layout](https://github.com/angular/flex-layout) among other things.
 

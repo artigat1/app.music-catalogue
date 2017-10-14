@@ -25,8 +25,8 @@ before_script:
 script:
   - export CHROME_BIN=chromium-browser
   - xvfb-run -a ng --version
-#  - xvfb-run -a npm run ci-test
-#  - xvfb-run -a npm run ci-e2e
+  - xvfb-run -a npm run ci-test
+  - xvfb-run -a npm run ci-e2e
   - xvfb-run -a npm run ci-build
 after_success:
   - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && firebase deploy --token "$FIREBASE_TOKEN"
