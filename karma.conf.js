@@ -20,6 +20,9 @@ module.exports = function (config) {
     mime: {
       'text/x-typescript': ['ts','tsx']
     },
+    files: [
+      { pattern: './node_modules/@angular/material/prebuilt-themes/indigo-pink.css' }
+    ],
     customLaunchers: {
       ChromeHeadless: {
         base: 'Chrome',

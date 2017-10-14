@@ -1,14 +1,14 @@
 import { AppPage } from './app.po';
 
-describe('app.music-catalogue App', () => {
+describe('Music Catalogue App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display page title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Music Catalogue');
   });
 });

@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {ReactiveFormsModule} from '@angular/forms';
+import {NoConflictStyleCompatibilityMode} from '@angular/material';
 import {RouterModule} from '@angular/router';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -16,6 +17,7 @@ import {CustomMaterialModule} from './material.module';
     CommonModule,
     FlexLayoutModule,
     CustomMaterialModule,
+    NoConflictStyleCompatibilityMode,
     ReactiveFormsModule,
     RouterModule
   ],
@@ -25,6 +27,7 @@ import {CustomMaterialModule} from './material.module';
     CommonModule,
     FlexLayoutModule,
     CustomMaterialModule,
+    NoConflictStyleCompatibilityMode,
     ReactiveFormsModule,
     RouterModule
   ]

@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "assets/styles/theme.scss",
         "assets/styles/styles.scss"
       ],
       "stylePreprocessorOptions": {
