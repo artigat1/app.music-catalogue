@@ -1,6 +1,6 @@
 export const environment = {
-  production: true,
-  hmr: false,
+  production: false,
+  hmr: true,
   firebase: {
     apiKey: 'AIzaSyB4EM6MHCF3Ho9tt2kt_Evg_Um6eL2CVFc',
     authDomain: 'music-catalogue.firebaseapp.com',
