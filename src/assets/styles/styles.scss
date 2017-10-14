@@ -1,0 +1,44 @@
+@import './variables';
+@import './mixins';
+@import './pallette';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+app-root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif, Verdana, Arial;
+  font-size: 14px;
+
+  main {
+    position: relative;
+    margin-top: 50px;
+    padding: .75em;
+    flex: 1 0 auto;
+
+    h1 {
+      color: $primary-text;
+      font-family: 'Open Sans', sans-serif, Verdana, Arial;
+    }
+  }
+
+  footer {
+    background-color: $primary;
+    color: $white-text;
+    padding: .75em;
+  }
+}
+
+.center {
+  text-align: center;
+}
