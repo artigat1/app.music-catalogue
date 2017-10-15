@@ -1,0 +1,23 @@
+@import "../../../assets/styles/pallette";
+@import "../../../assets/styles/variables";
+
+mat-toolbar {
+  max-height: 4em;
+
+  h1 {
+    font-size: 1.5em !important;
+  }
+
+  mat-form-field {
+    margin-top: 1em;
+  }
+
+  .mat-input-placeholder, .mat-focused .mat-form-field-placeholder {
+    color: $primary-text-light;
+  }
+  .mat-form-field.bigClass > input {
+    font-size: 30px;
+  }
+}
+
+

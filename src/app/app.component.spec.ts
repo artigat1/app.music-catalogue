@@ -1,14 +1,15 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {MatToolbar, MatToolbarModule} from '@angular/material';
+import {CoreModule} from './core/core.module';
+import {SharedModule} from './shared/shared.module';
 
-describe('AppComponent', () => {
+describe('App Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
-      imports: [MatToolbarModule]
+      imports: [SharedModule, CoreModule]
     }).compileComponents();
   }));
 
@@ -22,12 +23,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.year).toEqual(new Date().getFullYear());
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Music Catalogue');
   }));
 });

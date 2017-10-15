@@ -17,8 +17,9 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "",
       "styles": [
+        "../node_modules/font-awesome/css/font-awesome.min.css",
         "assets/styles/theme.scss",
         "assets/styles/styles.scss"
       ],

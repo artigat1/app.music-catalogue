@@ -9,6 +9,6 @@ describe('Music Catalogue App', () => {
 
   it('should display page title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Music Catalogue');
+    expect(page.getParagraphText()).toContain('Music Catalogue');
   });
 });

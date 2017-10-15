@@ -14,14 +14,17 @@ module.exports = function (config) {
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
     ],
-    client:{
+    client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     mime: {
-      'text/x-typescript': ['ts','tsx']
+      'text/x-typescript': ['ts', 'tsx']
     },
     files: [
-      { pattern: './node_modules/@angular/material/prebuilt-themes/indigo-pink.css' }
+      {pattern: './app/shared/rxjs-import.js'},
+      {pattern: './node_modules/@angular/material/prebuilt-themes/indigo-pink.css'},
+      {pattern: './node_modules/hammerjs/hammer.min.js'}
+
     ],
     customLaunchers: {
       ChromeHeadless: {
@@ -30,7 +33,7 @@ module.exports = function (config) {
       }
     },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true,
       thresholds: {
         statements: 70,
