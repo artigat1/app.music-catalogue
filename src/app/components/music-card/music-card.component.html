@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{music.title}}</mat-card-title>
+    <mat-card-subtitle *ngIf="music?.cast">{{music.cast}}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="image-container">
+    <img md-card-image src="{{music.imageUrl}}" alt="cd cover of {{music.title}}">
+  </div>
+  <mat-card-content>
+    <div class="content">
+      <p>recorded: <span>{{music.recordingDate ? music.recordingDate : music.recordingYear}}</span></p>
+    </div>
+    <div class="content" *ngIf="music?.composer.length > 0">
+      <p>composer:</p>
+      <ul>
+        <li *ngFor="let composer of music.composer">{{composer}}</li>
+      </ul>
+    </div>
+    <div class="content" *ngIf="music?.lyricist.length > 0">
+      <p>lyricist:</p>
+      <ul>
+        <li *ngFor="let lyricist of music.lyricist">{{lyricist}}</li>
+      </ul>
+    </div>
+    <div class="content" *ngIf="music?.artists.length > 0">
+      <p>artists:</p>
+      <ul>
+        <li *ngFor="let artist of music.artists">{{artist}}</li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

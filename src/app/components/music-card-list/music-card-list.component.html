@@ -1,0 +1,12 @@
+<div fxLayout="row"
+     fxLayoutAlign="space-between start"
+     fxLayout.xs="column"
+     fxLayoutWrap
+     fxLayoutGap="10px">
+  <music-card fxFlex="90%"
+              fxFlex.gt-xs="50%"
+              fxFlex.gt-md="30%"
+              fxFlex.gt-lg="23%"
+              *ngFor="let item of music"
+              [music]="item"></music-card>
+</div>

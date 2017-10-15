@@ -1,0 +1,49 @@
+@import '../../../assets/styles/variables';
+
+mat-card {
+
+  mat-card-title {
+    color: $secondary;
+    font-size: 1.5em !important;
+  }
+
+  mat-card-subtitle {
+    color: $grey-text;
+  }
+
+  .image-container {
+    text-align: center;
+    width: auto;
+    height: 250px;
+
+    img {
+      width: auto;
+      max-height: 100%;
+    }
+  }
+
+  mat-card-content {
+    color: $primary-text;
+    margin-top: .75em;
+
+    .content {
+      display: block;
+      margin-top: .75em;
+
+      p span {
+        color: $grey-text;
+      }
+
+      p, ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style-type: none;
+          color: $grey-text;
+          padding-left: 1.5em;
+        }
+      }
+    }
+  }
+}

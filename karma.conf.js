@@ -21,7 +21,6 @@ module.exports = function (config) {
       'text/x-typescript': ['ts', 'tsx']
     },
     files: [
-      {pattern: './app/shared/rxjs-import.js'},
       {pattern: './node_modules/@angular/material/prebuilt-themes/indigo-pink.css'},
       {pattern: './node_modules/hammerjs/hammer.min.js'}
 
