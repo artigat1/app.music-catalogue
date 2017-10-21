@@ -6,16 +6,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NoConflictStyleCompatibilityMode} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
-import {AngularFireAuthModule} from 'angularfire2/auth';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
 
 import {CustomMaterialModule} from './material.module';
 
 @NgModule({
   declarations: [],
   exports: [
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
     BrowserModule,
     CommonModule,
     FlexLayoutModule,
@@ -27,8 +23,6 @@ import {CustomMaterialModule} from './material.module';
     RouterModule
   ],
   imports: [
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
     BrowserModule,
     CommonModule,
     FlexLayoutModule,
