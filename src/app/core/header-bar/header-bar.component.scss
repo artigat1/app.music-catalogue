@@ -1,5 +1,4 @@
 @import "../../../assets/styles/pallette";
-@import "../../../assets/styles/variables";
 
 mat-toolbar {
   max-height: 4em;
@@ -13,8 +12,9 @@ mat-toolbar {
   }
 
   .mat-input-placeholder, .mat-focused .mat-form-field-placeholder {
-    color: $primary-text-light;
+    color: $primary-light;
   }
+
   .mat-form-field.bigClass > input {
     font-size: 30px;
   }

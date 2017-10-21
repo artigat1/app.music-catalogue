@@ -1,6 +1,7 @@
 import {Action, ActionReducer, ActionReducerMap, MetaReducer} from '@ngrx/store';
 import * as LogRocket from 'logrocket';
 
+import * as fromAuth from './auth.reducer';
 import * as fromUi from './ui.reducer';
 
 /**
@@ -9,14 +10,17 @@ import * as fromUi from './ui.reducer';
  */
 export interface State {
   ui: fromUi.State;
+  auth: fromAuth.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
   ui: fromUi.uiStateReducer,
+  auth: fromAuth.authStateReducer
 };
 
 export const INITIAL_STATE: State = {
-  ui: fromUi.INITIAL_STATE
+  ui: fromUi.INITIAL_STATE,
+  auth: fromAuth.INITIAL_STATE,
 };
 
 // Add the LogRocket meta reducer.

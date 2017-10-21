@@ -5,7 +5,7 @@ import 'rxjs/add/observable/of';
 import {Music} from '../shared/models';
 
 @Component({
-  selector: 'music-list',
+  selector: 'music-list-page',
   templateUrl: './music-list.component.html',
   styleUrls: ['./music-list.component.scss']
 })

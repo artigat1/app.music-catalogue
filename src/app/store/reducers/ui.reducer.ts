@@ -33,7 +33,7 @@ export function uiStateReducer(state: State = INITIAL_STATE, action: any) {
  * Returns the campaign manager state.
  * @function getCampaignManagerState
  * @param {State} state - Top level state.
- * @return {State} state - Brand level state
+ * @return {State} state - Ui level state
  */
 export const getUiState = (state: fromApp.State) => state.ui;
 

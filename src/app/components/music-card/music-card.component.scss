@@ -11,10 +11,6 @@ mat-card {
     width: 250px;
   }
 
-  mat-card-subtitle {
-    color: $grey-text;
-  }
-
   .image-container {
     text-align: center;
     width: auto;
@@ -27,7 +23,7 @@ mat-card {
   }
 
   mat-card-content {
-    color: $primary-text;
+    color: $primary;
     margin-top: .75em;
 
     .content {
@@ -35,7 +31,7 @@ mat-card {
       margin-top: .75em;
 
       p span {
-        color: $grey-text;
+        color: $grey;
       }
 
       p, ul {
@@ -44,7 +40,7 @@ mat-card {
 
         li {
           list-style-type: none;
-          color: $grey-text;
+          color: $grey;
           padding-left: 1.5em;
         }
       }

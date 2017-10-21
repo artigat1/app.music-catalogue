@@ -49,3 +49,41 @@ app-root {
     width: 100%;
   }
 }
+
+.text {
+  &-white {
+    color: $off-white;
+  }
+
+  &-grey {
+    color: $grey;
+  }
+
+  &-primary {
+    color: $primary;
+  }
+
+  &-primary-dark {
+    color: $primary-dark;
+  }
+
+  &-primary-light {
+    color: $primary-light;
+  }
+
+  &-accent {
+    color: $secondary;
+  }
+
+  &-accent-dark {
+    color: $secondary-dark;
+  }
+
+  &-accent-light {
+    color: $secondary-light;
+  }
+
+  &-warning {
+    color: $warn;
+  }
+}
