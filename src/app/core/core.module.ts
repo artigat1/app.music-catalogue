@@ -1,8 +1,21 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
+import {ErrorHandler, NgModule, Optional, SkipSelf} from '@angular/core';
+import {StoreModule} from '@ngrx/store';
+import * as LogRocket from 'logrocket';
 
+import {environment} from '../../environments/environment';
+import {metaReducers, reducers} from '../store/reducers';
 import {SharedModule} from '../shared/shared.module';
 import {HeaderBarComponent} from './header-bar/header-bar.component';
-import { LoaderComponent } from './loader.component';
+import {LoaderComponent} from './loader.component';
+
+export class LogRocketErrorHandler implements ErrorHandler {
+  handleError(err: any): void {
+    console.log(err);
+    if (environment.production) {
+      LogRocket.error(err);
+    }
+  }
+}
 
 @NgModule({
   declarations: [
@@ -14,9 +27,12 @@ import { LoaderComponent } from './loader.component';
     LoaderComponent
   ],
   imports: [
+    StoreModule.forRoot(reducers, {metaReducers}),
     SharedModule
   ],
-  providers: []
+  providers: [
+    {provide: ErrorHandler, useClass: LogRocketErrorHandler},
+  ]
 })
 export class CoreModule {
   /* make sure CoreModule is imported only by one NgModule the AppModule */

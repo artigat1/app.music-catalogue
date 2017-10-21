@@ -8,5 +8,6 @@ export const environment = {
     projectId: 'music-catalogue',
     storageBucket: 'music-catalogue.appspot.com',
     messagingSenderId: '753644242179'
-  }
+  },
+  logRocket: 'cb92fm/appmusic-catalogue'
 };

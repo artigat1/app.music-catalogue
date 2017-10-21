@@ -1,7 +1,5 @@
 import {NgModule} from '@angular/core';
-import {StoreModule} from '@ngrx/store';
 
-import {reducers} from './store/reducers/index';
 import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
@@ -18,8 +16,7 @@ import {MusicCardListComponent} from './components/music-card-list/music-card-li
   ],
   imports: [
     CoreModule,
-    SharedModule,
-    StoreModule.forRoot(reducers),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
