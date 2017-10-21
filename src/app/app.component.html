@@ -4,7 +4,7 @@
 
 <main>
   <music-list></music-list>
-  <note-loader [visible]="true"></note-loader>
+  <note-loader [visible]="loading$ | async"></note-loader>
 </main>
 
 <footer>
