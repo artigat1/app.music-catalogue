@@ -4,7 +4,11 @@ mat-card {
 
   mat-card-title {
     color: $secondary;
-    font-size: 1.5em !important;
+    font-size: 1.25em !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 250px;
   }
 
   mat-card-subtitle {
@@ -14,7 +18,7 @@ mat-card {
   .image-container {
     text-align: center;
     width: auto;
-    height: 250px;
+    height: 225px;
 
     img {
       width: auto;

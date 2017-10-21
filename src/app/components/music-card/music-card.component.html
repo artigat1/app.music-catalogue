@@ -7,26 +7,33 @@
     <img md-card-image src="{{music.imageUrl}}" alt="cd cover of {{music.title}}">
   </div>
   <mat-card-content>
-    <div class="content">
-      <p>recorded: <span>{{music.recordingDate ? music.recordingDate : music.recordingYear}}</span></p>
-    </div>
-    <div class="content" *ngIf="music?.composer.length > 0">
-      <p>composer:</p>
-      <ul>
-        <li *ngFor="let composer of music.composer">{{composer}}</li>
-      </ul>
-    </div>
-    <div class="content" *ngIf="music?.lyricist.length > 0">
-      <p>lyricist:</p>
-      <ul>
-        <li *ngFor="let lyricist of music.lyricist">{{lyricist}}</li>
-      </ul>
-    </div>
-    <div class="content" *ngIf="music?.artists.length > 0">
-      <p>artists:</p>
-      <ul>
-        <li *ngFor="let artist of music.artists">{{artist}}</li>
-      </ul>
-    </div>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <div class="content">
+          <p *ngIf="music.recordingYear">released: <span>{{music.recordingYear}}</span></p>
+          <p *ngIf="music.recordingDate">recorded: <span>{{music.recordingDate}}</span></p>
+        </div>
+      </mat-expansion-panel-header>
+
+      <div class="content" *ngIf="music?.composer.length > 0">
+        <p>composer:</p>
+        <ul>
+          <li *ngFor="let composer of music.composer">{{composer}}</li>
+        </ul>
+      </div>
+      <div class="content" *ngIf="music?.lyricist.length > 0">
+        <p>lyricist:</p>
+        <ul>
+          <li *ngFor="let lyricist of music.lyricist">{{lyricist}}</li>
+        </ul>
+      </div>
+      <div class="content" *ngIf="music?.artists.length > 0">
+        <p>artists:</p>
+        <ul>
+          <li *ngFor="let artist of music.artists">{{artist}}</li>
+        </ul>
+      </div>
+    </mat-expansion-panel>
+
   </mat-card-content>
 </mat-card>

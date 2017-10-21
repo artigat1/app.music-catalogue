@@ -21,13 +21,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    LogRocket.init(environment.logRocket, {
-      network: {
-        requestSanitizer: function (request: any) {
-          return request;
+    if (!LogRocket.sessionURL) {
+      LogRocket.init(environment.logRocket, {
+        network: {
+          requestSanitizer: function (request: any) {
+            return request;
+          },
         },
-      },
-    });
+      });
+    }
 
     this.loading$ = this.store.select(fromUi.getLoadingStatus);
   }

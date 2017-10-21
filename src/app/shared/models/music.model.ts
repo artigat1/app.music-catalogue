@@ -10,6 +10,6 @@ export interface Music {
   lyricist?: string[];
   artists: string[];
   recordingYear?: number;
-  recordingDate?: Date;
+  recordingDate?: string;
   cast?: string;
 }

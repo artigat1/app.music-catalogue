@@ -28,7 +28,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Claude-Michel Schonberg'],
         lyricist: ['Alain Boublil', 'Herbert Kretzmer'],
         cast: 'Original London Cast',
-        recordingYear: 1986,
+        recordingDate: '15th Sep 2017',
         artists: ['Colm Wilkinson', 'Roger Alam', 'Patti LuPone', 'Frances Ruffelle'],
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61W72QDB4ML.gif'
       },
