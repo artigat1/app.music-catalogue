@@ -1,0 +1,35 @@
+.notes-loader {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+
+  .note {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: url('../images/notes-loader.png');
+    animation: bounce .25s infinite alternate;
+    -webkit-animation: bounce .25s infinite alternate;
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-30px);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-30px);
+    }
+  }
+}
