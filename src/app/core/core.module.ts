@@ -2,13 +2,16 @@ import {NgModule, Optional, SkipSelf} from '@angular/core';
 
 import {SharedModule} from '../shared/shared.module';
 import {HeaderBarComponent} from './header-bar/header-bar.component';
+import { LoaderComponent } from './loader.component';
 
 @NgModule({
   declarations: [
-    HeaderBarComponent
+    HeaderBarComponent,
+    LoaderComponent
   ],
   exports: [
-    HeaderBarComponent
+    HeaderBarComponent,
+    LoaderComponent
   ],
   imports: [
     SharedModule
