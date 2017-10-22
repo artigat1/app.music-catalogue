@@ -1,14 +1,7 @@
-<div fxLayout="row"
-     fxLayoutAlign="space-between start"
-     fxLayout.xs="column"
-     fxLayoutWrap
-     fxLayoutGap="10px">
-  <ng-container *ngFor="let item of music">
-    <music-card fxFlex="90%"
-                fxFlex.gt-xs="50%"
-                fxFlex.gt-md="30%"
-                fxFlex.gt-lg="23%"
-                *ngIf="displayCard(item)"
+<div class="container" data-masonry='{ "itemSelector": ".grid-item" }'>
+  <ng-container class="brick" *ngFor="let item of music">
+    <music-card *ngIf="displayCard(item)"
+                class="grid-item"
                 [music]="item"></music-card>
   </ng-container>
 </div>
