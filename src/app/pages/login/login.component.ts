@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs/Observable';
 
 import * as fromApp from '../../store/reducers';
+import * as fromAuth from '../../store/reducers/auth.reducer';
 import * as AuthActions from '../../store/actions/auth.action';
 
 @Component({
@@ -12,7 +14,8 @@ import * as AuthActions from '../../store/actions/auth.action';
 })
 export class LoginComponent implements OnInit {
 
-  public form: FormGroup;
+  form: FormGroup;
+  error$: Observable<string>;
 
   constructor(private readonly store: Store<fromApp.State>,
               private readonly formBuilder: FormBuilder) {
@@ -23,6 +26,8 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.error$ = this.store.select(fromAuth.getAuthError);
   }
 
   signInWithEmailAndPassword() {
