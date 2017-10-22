@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 import {Music} from '../shared/models';
+import * as fromApp from '../store/reducers';
+import * as fromAuth from '../store/reducers/auth.reducer';
 
 @Component({
   selector: 'music-list-page',
@@ -12,12 +15,14 @@ import {Music} from '../shared/models';
 export class MusicListComponent implements OnInit {
 
   music$: Observable<Music[]>;
+  isLoggedIn$: Observable<boolean>;
 
-  constructor() {
+  constructor(private readonly store: Store<fromApp.State>) {
   }
 
   ngOnInit() {
     this.music$ = this.getMusic();
+    this.isLoggedIn$ = this.store.select(fromAuth.isLoggedIn);
   }
 
   private getMusic(): Observable<Music[]> {

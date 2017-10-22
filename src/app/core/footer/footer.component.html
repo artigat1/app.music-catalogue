@@ -1,0 +1,7 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <span fxFlex="50%">&copy;{{year}} Steve Doggett</span>
+  <span fxFlex="50%" class="actions">
+    <a [routerLink]="['/logout']" *ngIf="isLoggedIn">Logout</a>
+    <a [routerLink]="['/login']" *ngIf="!isLoggedIn">Login</a>
+  </span>
+</div>

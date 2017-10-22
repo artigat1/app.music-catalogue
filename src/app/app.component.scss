@@ -4,3 +4,9 @@ footer {
   background-color: $primary-dark;
   color: $primary-light;
 }
+
+.btn-edit {
+  position: fixed;
+  bottom: 55px;
+  right: 1em;
+}

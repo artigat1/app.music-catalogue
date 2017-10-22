@@ -3,10 +3,12 @@
      fxLayout.xs="column"
      fxLayoutWrap
      fxLayoutGap="10px">
-  <music-card fxFlex="90%"
-              fxFlex.gt-xs="50%"
-              fxFlex.gt-md="30%"
-              fxFlex.gt-lg="23%"
-              *ngFor="let item of music"
-              [music]="item"></music-card>
+  <ng-container *ngFor="let item of music">
+    <music-card fxFlex="90%"
+                fxFlex.gt-xs="50%"
+                fxFlex.gt-md="30%"
+                fxFlex.gt-lg="23%"
+                *ngIf="displayCard(item)"
+                [music]="item"></music-card>
+  </ng-container>
 </div>

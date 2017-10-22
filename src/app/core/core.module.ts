@@ -10,6 +10,7 @@ import * as LogRocket from 'logrocket';
 import {environment} from '../../environments/environment';
 import {metaReducers, reducers} from '../store/reducers';
 import {SharedModule} from '../shared/shared.module';
+import {FooterBarComponent} from './footer/footer.component';
 import {HeaderBarComponent} from './header-bar/header-bar.component';
 import {LoaderComponent} from './loader.component';
 import {AuthService} from './services/auth.service';
@@ -27,11 +28,13 @@ export class LogRocketErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     HeaderBarComponent,
-    LoaderComponent
+    LoaderComponent,
+    FooterBarComponent
   ],
   exports: [
     HeaderBarComponent,
-    LoaderComponent
+    LoaderComponent,
+    FooterBarComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'music-catalogue'),

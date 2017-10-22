@@ -6,6 +6,7 @@ import * as LogRocket from 'logrocket';
 import {environment} from '../environments/environment';
 import * as fromApp from './store/reducers';
 import * as fromUi from './store/reducers/ui.reducer';
+import * as fromAuth from './store/reducers/auth.reducer';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,8 @@ export class AppComponent implements OnInit {
 
   year = new Date().getFullYear();
   loading$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
+  isLoggedIn$: Observable<boolean>;
 
   constructor(public readonly store: Store<fromApp.State>) {
   }
@@ -32,5 +35,7 @@ export class AppComponent implements OnInit {
     }
 
     this.loading$ = this.store.select(fromUi.getLoadingStatus);
+    this.isAdmin$ = this.store.select(fromAuth.isAdmin);
+    this.isLoggedIn$ = this.store.select(fromAuth.isLoggedIn);
   }
 }

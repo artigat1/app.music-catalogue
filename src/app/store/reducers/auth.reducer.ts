@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 
 import * as AuthActions from '../actions/auth.action';
 import * as fromApp from './index';
+import {environment} from '../../../environments/environment';
 
 /**
  * Interface for classes that represent the Auth state.
@@ -69,3 +70,33 @@ export const getAuthUser = createSelector(getAuthState, (state: State) => state.
  * @return {string} - error message
  */
 export const getAuthError = createSelector(getAuthState, (state: State) => state.error);
+
+/**
+ * Is user logged in and an admin
+ * @function isAdmin
+ * @param Auth state
+ * @param {any} props
+ * @return {boolean} - true if admin user, false otherwise
+ */
+export const isAdmin =
+  createSelector(getAuthState, (state: State) => !!(state.user && state.user.email === environment.adminEmail));
+
+/**
+ * Is user logged in and a guest
+ * @function isGuest
+ * @param Auth state
+ * @param {any} props
+ * @return {boolean} - true if logged in guest user, false otherwise
+ */
+export const isGuest =
+  createSelector(getAuthState, (state: State) => !!(state.user && state.user.email.startsWith('guest')));
+
+/**
+ * Is user logged in
+ * @function isLoggedIn
+ * @param Auth state
+ * @param {any} props
+ * @return {boolean} - true if logged in user, false otherwise
+ */
+export const isLoggedIn =
+  createSelector(getAuthState, (state: State) => !!(state.user));

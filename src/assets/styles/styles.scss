@@ -10,6 +10,10 @@ ul, li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 app-root {
   display: flex;
   min-height: 100vh;
@@ -29,6 +33,14 @@ app-root {
 
   footer {
     padding: .75em;
+
+    a {
+      color: $primary-light;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
   }
 }
 
