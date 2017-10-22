@@ -13,8 +13,10 @@
                  autocorrect="off"
                  autocapitalize="off"
                  spellcheck="off"
-                 formControlName="email"
-                 [class.invalid]="form.controls['email'].errors && form.controls['email'].dirty">
+                 formControlName="email">
+          <mat-error *ngIf="form.controls['email'].hasError()">
+            Email is required
+          </mat-error>
         </mat-form-field>
         <mat-form-field fxFlex="45%">
           <input matInput
@@ -24,8 +26,10 @@
                  autocorrect="off"
                  autocapitalize="off"
                  spellcheck="off"
-                 formControlName="password"
-                 [class.invalid]="form.controls['password'].errors && form.controls['password'].dirty">
+                 formControlName="password">
+          <mat-error *ngIf="form.controls['password'].hasError()">
+            Password is required
+          </mat-error>
         </mat-form-field>
         <div fxFlex>
           <button mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Login</button>

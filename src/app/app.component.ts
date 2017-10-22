@@ -7,6 +7,8 @@ import {environment} from '../environments/environment';
 import * as fromApp from './store/reducers';
 import * as fromUi from './store/reducers/ui.reducer';
 import * as fromAuth from './store/reducers/auth.reducer';
+import {MatDialog, MatDialogRef} from '@angular/material';
+import {AddNewMusicDialogComponent} from './components/add-new-music-dialog/add-new-music-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +20,10 @@ export class AppComponent implements OnInit {
   loading$: Observable<boolean>;
   isAdmin$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;
+  dialogRef: MatDialogRef<AddNewMusicDialogComponent> | null;
 
-  constructor(public readonly store: Store<fromApp.State>) {
+  constructor(public readonly store: Store<fromApp.State>,
+              public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -36,5 +40,18 @@ export class AppComponent implements OnInit {
     this.loading$ = this.store.select(fromUi.getLoadingStatus);
     this.isAdmin$ = this.store.select(fromAuth.isAdmin);
     this.isLoggedIn$ = this.store.select(fromAuth.isLoggedIn);
+  }
+
+  onAddMusicClick(): void {
+    this.dialogRef = this.dialog.open(AddNewMusicDialogComponent, {
+      width: '50vw',
+      data: null
+    });
+
+    this.dialogRef
+      .afterClosed()
+      .subscribe((result: string) => {
+        this.dialogRef = null;
+      });
   }
 }

@@ -15,6 +15,7 @@ import {HeaderBarComponent} from './header-bar/header-bar.component';
 import {LoaderComponent} from './loader.component';
 import {AuthService} from './services/auth.service';
 import {AppEffects} from '../store/effects/index';
+import {AddNewMusicDialogComponent} from '../components/add-new-music-dialog/add-new-music-dialog.component';
 
 export class LogRocketErrorHandler implements ErrorHandler {
   handleError(err: any): void {
@@ -48,7 +49,8 @@ export class LogRocketErrorHandler implements ErrorHandler {
   providers: [
     AuthService,
     {provide: ErrorHandler, useClass: LogRocketErrorHandler},
-  ]
+  ],
+  entryComponents: [AddNewMusicDialogComponent],
 })
 export class CoreModule {
   /* make sure CoreModule is imported only by one NgModule the AppModule */

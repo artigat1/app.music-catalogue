@@ -11,11 +11,12 @@ import {environment} from '../../../environments/environment';
  */
 export interface State {
   user: firebase.User;
-  error?: string;
+  error: string;
 }
 
 export const INITIAL_STATE: State = {
   user: undefined,
+  error: undefined
 };
 
 export function authStateReducer(state: State = INITIAL_STATE, action: any) {

@@ -5,7 +5,11 @@
 <main>
   <router-outlet></router-outlet>
   <note-loader [visible]="loading$ | async"></note-loader>
-  <button mat-fab color="accent" class="btn-edit" *ngIf="isAdmin$ | async">
+  <button mat-fab
+          color="accent"
+          class="btn-edit"
+          (click)="onAddMusicClick()"
+          *ngIf="isAdmin$ | async">
     <mat-icon class="fa" fontIcon="fa-plus"></mat-icon>
   </button>
 </main>
