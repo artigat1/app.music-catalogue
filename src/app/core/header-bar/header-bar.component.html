@@ -1,21 +1,22 @@
 <mat-toolbar color="primary" class="mat-elevation-z5">
   <div fxFlex="80%" fxFlexOffset="10vw">
     <div fxLayout="row" fxLayoutGap="2%" fxLayoutAlign="space-between center">
-      <div fxFlex="50%">
+      <div fxFlex="50%" fxHide.sm fxHide.xs>
         <h1>
           <mat-icon class="fa" fontIcon="fa-music" color="accent"></mat-icon>&nbsp;
           {{title}}
           <mat-icon class="fa" fontIcon="fa-music" color="accent"></mat-icon>
         </h1>
       </div>
-      <div fxFlex="50%" class="utils-right">
+      <div fxFlex="40%" fxFlex.lt-md="90%" class="utils-right">
         <mat-form-field class="utils-full-width bigClass">
           <input matInput [placeholder]="searchPlaceholder" [formControl]="query">
           <mat-icon matPrefix class="fa" fontIcon="fa-search" color="accent"></mat-icon>
         </mat-form-field>
+      </div>
+      <div fxFlex>
         <button mat-raised-button color="accent" [disabled]="!query.valid">Search</button>
       </div>
-      <div fxFlex="10vw"></div>
     </div>
   </div>
 </mat-toolbar>

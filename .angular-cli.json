@@ -29,9 +29,7 @@
           "assets/styles/"
         ]
       },
-      "scripts": [
-        "../node_modules/masonry-layout/dist/masonry.pkgd.min.js"
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
