@@ -1,0 +1,9 @@
+@import '../../../assets/styles/pallette';
+
+mat-form-field {
+  width: 100%;
+}
+
+button[disabled] {
+  background-color: $primary-light !important;
+}

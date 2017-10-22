@@ -43,7 +43,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Claude-Michel Schonberg'],
         lyricist: ['Alain Boublil'],
         cast: 'Original London Cast',
-        recordingYear: 1989,
+        releaseYear: 1989,
         artists: ['Lea Salonga', 'Simon Bowman', 'Peter Polycarpou', 'Claire Moore'],
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/711Hi5vy8GL._SL1200_.jpg'
       },
@@ -53,7 +53,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Claude-Michel Schonberg'],
         lyricist: ['Alain Boublil'],
         cast: 'Original London Cast',
-        recordingYear: 1996,
+        releaseYear: 1996,
         artists: ['Iain Glenn', 'Matt Rawle', 'Rebecca Locke'],
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/91eVnaEE45L._SL1369_.jpg'
       },
@@ -63,7 +63,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Andrew Lloyd Webber'],
         lyricist: ['Christopher Hampton', 'Don Black'],
         cast: 'Original London Cast',
-        recordingYear: 1993,
+        releaseYear: 1993,
         artists: ['Patti LuPone', 'Kevin Anderson', 'Meredith Braun', 'Daniel Benzali'],
         imageUrl: 'http://www.dresscircle.com/9854-thickbox_default/sunset-boulevard-original-london-cast-cd.jpg'
       },
@@ -73,7 +73,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Various'],
         lyricist: ['Various'],
         cast: 'Original London Cast',
-        recordingYear: 1989,
+        releaseYear: 1989,
         artists: ['John Ashby', 'Matthew Devitt', 'Kate Edgar', 'Nicky Furre', 'Alison Harding'],
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61R0K4XPWBL.jpg'
       },
@@ -83,7 +83,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Claude-Michel Schonberg'],
         lyricist: ['Alain Boublil'],
         cast: 'Original London Cast',
-        recordingYear: 1989,
+        releaseYear: 1989,
         artists: ['Lea Salonga', 'Simon Bowman', 'Peter Polycarpou', 'Claire Moore'],
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/711Hi5vy8GL._SL1200_.jpg'
       },
@@ -93,7 +93,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Various'],
         lyricist: ['Various'],
         cast: 'Original London Cast',
-        recordingYear: 1989,
+        releaseYear: 1989,
         artists: ['John Ashby', 'Matthew Devitt', 'Kate Edgar', 'Nicky Furre', 'Alison Harding'],
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61R0K4XPWBL.jpg'
       },
@@ -103,7 +103,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Claude-Michel Schonberg'],
         lyricist: ['Alain Boublil'],
         cast: 'Original London Cast',
-        recordingYear: 1996,
+        releaseYear: 1996,
         artists: ['Iain Glenn', 'Matt Rawle', 'Rebecca Locke'],
         imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/91eVnaEE45L._SL1369_.jpg'
       },
@@ -113,7 +113,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Andrew Lloyd Webber'],
         lyricist: ['Christopher Hampton', 'Don Black'],
         cast: 'Original London Cast',
-        recordingYear: 1993,
+        releaseYear: 1993,
         artists: ['Patti LuPone', 'Kevin Anderson', 'Meredith Braun', 'Daniel Benzali'],
         imageUrl: 'http://www.dresscircle.com/9854-thickbox_default/sunset-boulevard-original-london-cast-cd.jpg'
       },
@@ -123,7 +123,7 @@ export class MusicListComponent implements OnInit {
         composer: ['Andrew Lloyd Webber'],
         lyricist: ['Christopher Hampton', 'Don Black'],
         cast: 'Original London Cast',
-        recordingYear: 1993,
+        releaseYear: 1993,
         artists: ['Patti LuPone', 'Kevin Anderson', 'Meredith Braun', 'Daniel Benzali'],
         imageUrl: 'http://www.dresscircle.com/9854-thickbox_default/sunset-boulevard-original-london-cast-cd.jpg'
       },

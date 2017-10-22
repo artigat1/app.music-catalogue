@@ -1,3 +1,48 @@
-<p>
-  music-edit-form works!
-</p>
+<form fxLayout="column" [formGroup]="form" (submit)="onSubmit(form.value)">
+  <mat-form-field fxFlex="100">
+    <input matInput type="text" placeholder="title" formControlName="title">
+    <mat-error *ngIf="form.controls['title'].hasError()">
+      Title of the music is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <input matInput type="text" placeholder="cast (original London, pop, male solo)" formControlName="cast">
+    <mat-error *ngIf="form.controls['cast'].hasError()">
+      Cast is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field fxFlex="100">
+    <input matInput type="text" placeholder="image url" formControlName="imageUrl">
+  </mat-form-field>
+  <div fxFlex="100" fxLayout="row" fxLayoutGap=".75em">
+    <mat-form-field fxFlex="50">
+      <input matInput type="number" placeholder="release year" formControlName="releaseYear">
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <input matInput type="text" placeholder="recording date" formControlName="recordingDate">
+    </mat-form-field>
+  </div>
+  <div fxFlex="100" fxLayout="row" fxLayoutGap=".75em">
+    <mat-form-field fxFlex="50">
+      <textarea matInput type="text" placeholder="composer (comma separated)" formControlName="composer"></textarea>
+      <mat-error *ngIf="form.controls['composer'].hasError()">
+        Composer is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <textarea matInput type="text" placeholder="lyricist (comma separated)" formControlName="lyricist"></textarea>
+      <mat-error *ngIf="form.controls['lyricist'].hasError()">
+        Lyricist is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <mat-form-field fxFlex="100">
+    <textarea matInput type="text" placeholder="artists (comma separated)" formControlName="artists"></textarea>
+    <mat-error *ngIf="form.controls['artists'].hasError()">
+      Artists are required
+    </mat-error>
+  </mat-form-field>
+  <div fxFlex="100">
+    <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">Add music</button>
+  </div>
+</form>
