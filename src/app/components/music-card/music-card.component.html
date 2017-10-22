@@ -4,14 +4,14 @@
     <mat-card-subtitle *ngIf="music?.cast">{{music.cast}}</mat-card-subtitle>
   </mat-card-header>
   <div class="image-container">
-    <img md-card-image src="{{music.imageUrl}}" alt="cd cover of {{music.title}}">
+    <img md-card-image src="{{music?.imageUrl}}" alt="cd cover of {{music.title}}">
   </div>
   <mat-card-content>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <div class="content">
-          <p *ngIf="music.recordingYear">released: <span>{{music.recordingYear}}</span></p>
-          <p *ngIf="music.recordingDate">recorded: <span>{{music.recordingDate}}</span></p>
+          <p *ngIf="music?.recordingYear">released: <span>{{music.recordingYear}}</span></p>
+          <p *ngIf="music?.recordingDate">recorded: <span>{{music.recordingDate}}</span></p>
         </div>
       </mat-expansion-panel-header>
 

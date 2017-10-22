@@ -15,7 +15,6 @@ import * as fromAuth from './store/reducers/auth.reducer';
 })
 export class AppComponent implements OnInit {
 
-  year = new Date().getFullYear();
   loading$: Observable<boolean>;
   isAdmin$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;

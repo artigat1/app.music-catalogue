@@ -11,4 +11,5 @@ export class FooterBarComponent {
   @Input()
   isLoggedIn: boolean;
 
+  year = new Date().getFullYear();
 }

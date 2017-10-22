@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {StoreRouterConnectingModule} from '@ngrx/router-store';
 
-import {MusicListComponent} from './pages/music-list.component';
+import {MusicListComponent} from './pages/music-list/music-list.component';
 import {LoginComponent} from './pages/login/login.component';
 import {LogoutComponent} from './pages/logout.component';
 
