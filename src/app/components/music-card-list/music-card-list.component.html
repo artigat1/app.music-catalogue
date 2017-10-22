@@ -1,5 +1,5 @@
-<div class="container" data-masonry='{ "itemSelector": ".grid-item" }'>
-  <ng-container class="brick" *ngFor="let item of music">
+<div class="container">
+  <ng-container *ngFor="let item of music">
     <music-card *ngIf="displayCard(item)"
                 class="grid-item"
                 [music]="item"></music-card>

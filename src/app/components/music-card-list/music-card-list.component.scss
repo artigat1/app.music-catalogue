@@ -1,6 +1,12 @@
 .container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  margin-top: .75em;
+
   .grid-item {
-    width: 325px;
-    margin: .75em;
+    max-width: 350px;
+    flex: auto;
+    margin: 0 .75em .75em 0;
   }
 }
