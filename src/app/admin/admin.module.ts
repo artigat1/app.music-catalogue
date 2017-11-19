@@ -1,19 +1,20 @@
 import {NgModule} from '@angular/core';
 
-
-import {CoreModule} from '../core/core.module';
 import {SharedModule} from '../shared/shared.module';
-import {AddNewMusicDialogComponent} from './add-new-music-dialog/add-new-music-dialog.component';
+import {AddNewMusicComponent} from './pages/add-new-music/add-new-music.component';
+import {adminRouting} from './admin.routing';
+import {MusicEditFormComponent} from './components/music-edit-form/music-edit-form.component';
 
 @NgModule({
   declarations: [
-    AddNewMusicDialogComponent
+    AddNewMusicComponent,
+    MusicEditFormComponent
   ],
-  exports: [
-    AddNewMusicDialogComponent
+  exports: [,
+    AddNewMusicComponent
   ],
   imports: [
-    CoreModule,
+    adminRouting,
     SharedModule
   ]
 })

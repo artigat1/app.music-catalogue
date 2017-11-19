@@ -1,6 +1,7 @@
 import {ErrorHandler, NgModule, Optional, SkipSelf} from '@angular/core';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {EffectsModule} from '@ngrx/effects';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -9,13 +10,13 @@ import * as LogRocket from 'logrocket';
 
 import {environment} from '../../environments/environment';
 import {metaReducers, reducers} from '../store/reducers';
+import {AppEffects} from '../store/effects/index';
+import {AuthGuard} from '../shared/auth.guard';
 import {SharedModule} from '../shared/shared.module';
+import {AuthService} from './services/auth.service';
 import {FooterBarComponent} from './footer/footer.component';
 import {HeaderBarComponent} from './header-bar/header-bar.component';
 import {LoaderComponent} from './loader.component';
-import {AuthService} from './services/auth.service';
-import {AppEffects} from '../store/effects/index';
-import {AddNewMusicDialogComponent} from '../admin/add-new-music-dialog/add-new-music-dialog.component';
 
 export class LogRocketErrorHandler implements ErrorHandler {
   handleError(err: any): void {
@@ -44,13 +45,14 @@ export class LogRocketErrorHandler implements ErrorHandler {
     EffectsModule.forRoot(AppEffects),
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [],
+    StoreRouterConnectingModule,
     SharedModule
   ],
   providers: [
     AuthService,
+    AuthGuard,
     {provide: ErrorHandler, useClass: LogRocketErrorHandler},
-  ],
-  entryComponents: [AddNewMusicDialogComponent],
+  ]
 })
 export class CoreModule {
   /* make sure CoreModule is imported only by one NgModule the AppModule */

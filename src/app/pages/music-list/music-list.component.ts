@@ -3,7 +3,7 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
-import {Music} from '../../shared/models';
+import {Music} from '../../shared/interfaces';
 import * as fromApp from '../../store/reducers';
 import * as fromAuth from '../../store/reducers/auth.reducer';
 

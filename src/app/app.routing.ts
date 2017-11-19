@@ -1,6 +1,5 @@
-import {NgModule} from '@angular/core';
+import {ModuleWithProviders} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {StoreRouterConnectingModule} from '@ngrx/router-store';
 
 import {MusicListComponent} from './pages/music-list/music-list.component';
 import {LoginComponent} from './pages/login/login.component';
@@ -14,17 +13,10 @@ const APP_ROUTES: Routes = [
   {
     path: 'admin',
     canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     loadChildren: 'app/admin/admin.module#AdminModule'
   },
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(APP_ROUTES),
-    StoreRouterConnectingModule
-  ],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {
-}
+export const appRouting: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

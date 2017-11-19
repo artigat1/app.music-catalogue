@@ -1,4 +1,4 @@
-import {Component, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {CoreModule} from './core/core.module';
@@ -7,7 +7,7 @@ import {ComponentsModule} from './components/components.module';
 import {MusicListComponent} from './pages/music-list/music-list.component';
 import {LoginComponent} from './pages/login/login.component';
 import {LogoutComponent} from './pages/logout.component';
-import {AppRoutingModule} from './app.routing';
+import {appRouting} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {AppRoutingModule} from './app.routing';
     MusicListComponent
   ],
   imports: [
-    AppRoutingModule,
+    appRouting,
     ComponentsModule,
     CoreModule,
     SharedModule
