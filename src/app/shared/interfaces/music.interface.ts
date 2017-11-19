@@ -12,4 +12,5 @@ export interface Music {
   releaseYear?: number;
   recordingDate?: string;
   cast?: string;
+  shareUrl?: string;
 }

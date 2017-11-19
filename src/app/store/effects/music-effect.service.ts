@@ -17,12 +17,7 @@ export class MusicEffectService {
     .pipe(
       switchMap(action => {
         console.log(action);
-        return this.afs
-          .collection<Music>(
-            'music',
-            ref => ref
-              .orderBy('title')
-          ).stateChanges();
+        return this.afs.collection<Music>('music', ref => ref.orderBy('title')).stateChanges();
       }),
       mergeMap(actions => actions),
       map(action => {

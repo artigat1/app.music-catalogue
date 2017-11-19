@@ -2,6 +2,7 @@
   <ng-container *ngFor="let item of music">
     <music-card *ngIf="displayCard(item)"
                 class="grid-item"
-                [music]="item"></music-card>
+                [music]="item"
+                [isAdmin]="isAdmin"></music-card>
   </ng-container>
 </div>

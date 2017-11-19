@@ -13,4 +13,7 @@ export class MusicCardComponent {
   @Input()
   music: Music;
 
+  @Input()
+  isAdmin: boolean;
+
 }

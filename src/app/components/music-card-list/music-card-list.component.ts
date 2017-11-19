@@ -16,6 +16,9 @@ export class MusicCardListComponent {
   @Input()
   isLoggedIn: boolean;
 
+  @Input()
+  isAdmin: boolean;
+
   /**
    * Should the card be displayed.
    * If the recording date is set, then only logged in user's can see the card.

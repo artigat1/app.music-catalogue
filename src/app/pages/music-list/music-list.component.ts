@@ -18,6 +18,7 @@ export class MusicListComponent implements OnInit {
 
   music$: Observable<Music[]>;
   isLoggedIn$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
 
   constructor(private readonly store: Store<fromApp.State>) {
   }
@@ -26,6 +27,7 @@ export class MusicListComponent implements OnInit {
 
     this.music$ = this.store.select(fromMusic.selectAll);
     this.isLoggedIn$ = this.store.select(fromAuth.isLoggedIn);
+    this.isAdmin$ = this.store.select(fromAuth.isAdmin);
 
     this.store.dispatch(new MusicActions.Query());
   }

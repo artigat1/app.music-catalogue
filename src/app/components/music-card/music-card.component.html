@@ -33,6 +33,11 @@
           <li *ngFor="let artist of music.artists">{{artist}}</li>
         </ul>
       </div>
+
+      <dl class="content" *ngIf="isAdmin && music?.shareUrl">
+        <dt>share url:</dt>
+        <dd>{{music.shareUrl}}</dd>
+      </dl>
     </mat-expansion-panel>
 
   </mat-card-content>
