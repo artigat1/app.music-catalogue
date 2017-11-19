@@ -4,7 +4,6 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {EffectsModule} from '@ngrx/effects';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
 import * as LogRocket from 'logrocket';
 
 import {environment} from '../../environments/environment';
@@ -16,6 +15,7 @@ import {LoaderComponent} from './loader.component';
 import {AuthService} from './services/auth.service';
 import {AppEffects} from '../store/effects/index';
 import {AddNewMusicDialogComponent} from '../admin/add-new-music-dialog/add-new-music-dialog.component';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 
 export class LogRocketErrorHandler implements ErrorHandler {
   handleError(err: any): void {
@@ -39,8 +39,8 @@ export class LogRocketErrorHandler implements ErrorHandler {
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'music-catalogue'),
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
     EffectsModule.forRoot(AppEffects),
     StoreModule.forRoot(reducers, {metaReducers}),
     !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [],
@@ -48,7 +48,7 @@ export class LogRocketErrorHandler implements ErrorHandler {
   ],
   providers: [
     AuthService,
-    {provide: ErrorHandler, useClass: LogRocketErrorHandler},
+    {provide: ErrorHandler, useClass: LogRocketErrorHandler}
   ],
   entryComponents: [AddNewMusicDialogComponent],
 })

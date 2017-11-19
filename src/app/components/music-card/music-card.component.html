@@ -11,7 +11,7 @@
       <mat-expansion-panel-header>
         <div class="content">
           <p *ngIf="music?.releaseYear">released: <span>{{music.releaseYear}}</span></p>
-          <p *ngIf="music?.recordingDate">recorded: <span>{{music.recordingDate}}</span></p>
+          <p *ngIf="music?.recordingDate">recorded: <span>{{music.recordingDate | date: 'MMM dd yyyy'}}</span></p>
         </div>
       </mat-expansion-panel-header>
 

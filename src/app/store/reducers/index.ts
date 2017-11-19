@@ -3,6 +3,8 @@ import * as LogRocket from 'logrocket';
 
 import * as fromAuth from './auth.reducer';
 import * as fromUi from './ui.reducer';
+import * as fromMusic from './music.reducer';
+import {musicAdaptor} from '../entities/music-adaptor.entity';
 
 /**
  * Interface for classes that represent the application's state.
@@ -11,16 +13,19 @@ import * as fromUi from './ui.reducer';
 export interface State {
   ui: fromUi.State;
   auth: fromAuth.State;
+  music: any;
 }
 
 export const reducers: ActionReducerMap<State> = {
   ui: fromUi.uiStateReducer,
-  auth: fromAuth.authStateReducer
+  auth: fromAuth.authStateReducer,
+  music: fromMusic.musicStateReducer
 };
 
 export const INITIAL_STATE: State = {
   ui: fromUi.INITIAL_STATE,
   auth: fromAuth.INITIAL_STATE,
+  music: musicAdaptor.getInitialState()
 };
 
 // Add the LogRocket meta reducer.
