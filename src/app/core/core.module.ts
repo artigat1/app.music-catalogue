@@ -15,7 +15,7 @@ import {HeaderBarComponent} from './header-bar/header-bar.component';
 import {LoaderComponent} from './loader.component';
 import {AuthService} from './services/auth.service';
 import {AppEffects} from '../store/effects/index';
-import {AddNewMusicDialogComponent} from '../components/add-new-music-dialog/add-new-music-dialog.component';
+import {AddNewMusicDialogComponent} from '../admin/add-new-music-dialog/add-new-music-dialog.component';
 
 export class LogRocketErrorHandler implements ErrorHandler {
   handleError(err: any): void {

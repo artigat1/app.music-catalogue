@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
-import {Music} from '../../shared/models/music.model';
+import {Music} from '../../shared/interfaces/music.interface';
 
 @Component({
   selector: 'music-edit-form',

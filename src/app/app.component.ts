@@ -8,7 +8,7 @@ import * as fromApp from './store/reducers';
 import * as fromUi from './store/reducers/ui.reducer';
 import * as fromAuth from './store/reducers/auth.reducer';
 import {MatDialog, MatDialogRef} from '@angular/material';
-import {AddNewMusicDialogComponent} from './components/add-new-music-dialog/add-new-music-dialog.component';
+import {AddNewMusicDialogComponent} from './admin/add-new-music-dialog/add-new-music-dialog.component';
 
 @Component({
   selector: 'app-root',

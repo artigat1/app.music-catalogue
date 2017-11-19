@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
-import {Music} from '../../shared/models/music.model';
+import {Music} from '../../shared/interfaces/music.interface';
 
 @Component({
   selector: 'add-new-music-dialog',

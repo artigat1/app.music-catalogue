@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
-import {Music} from '../../shared/models';
+import {Music} from '../../shared/interfaces';
 
 @Component({
   selector: 'music-card',
