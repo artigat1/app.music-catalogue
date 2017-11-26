@@ -3,14 +3,14 @@
  * @interface
  */
 export interface Music {
-  id?: string;
-  title: string;
-  imageUrl?: string;
-  composer?: string[];
-  lyricist?: string[];
-  artists: string[];
-  releaseYear?: number;
-  recordingDate?: string;
-  cast?: string;
-  shareUrl?: string;
+    id?: string;
+    title: string;
+    imageUrl?: string;
+    composer?: string[];
+    lyricist?: string[];
+    artists: string[];
+    releaseYear?: number;
+    recordingDate?: string;
+    cast?: string;
+    shareUrl?: string;
 }

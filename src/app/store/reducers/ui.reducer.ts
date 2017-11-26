@@ -1,4 +1,4 @@
-import {createSelector} from 'reselect';
+import { createSelector } from 'reselect';
 
 import * as UiActions from '../actions/ui.action';
 import * as fromApp from './index';
@@ -8,25 +8,24 @@ import * as fromApp from './index';
  * @interface
  */
 export interface State {
-  loading: boolean;
+    loading: boolean;
 }
 
 export const INITIAL_STATE: State = {
-  loading: false,
+    loading: false,
 };
 
 export function uiStateReducer(state: State = INITIAL_STATE, action: any) {
-  switch (action.type) {
+    switch (action.type) {
+        case UiActions.Types.LOADING:
+            return {
+                ...state,
+                loading: action.payload,
+            };
 
-    case UiActions.Types.LOADING:
-      return {
-        ...state,
-        loading: action.payload
-      };
-
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 }
 
 /**
@@ -44,4 +43,7 @@ export const getUiState = (state: fromApp.State) => state.ui;
  * @param {any} props
  * @return {boolean} - true if loading, otherwise false
  */
-export const getLoadingStatus = createSelector(getUiState, (state: State) => state.loading);
+export const getLoadingStatus = createSelector(
+    getUiState,
+    (state: State) => state.loading,
+);

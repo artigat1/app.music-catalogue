@@ -1,7 +1,4 @@
-import {AuthEffectService} from './auth-effect.service';
-import {MusicEffectService} from './music-effect.service';
+import { AuthEffectService } from './auth-effect.service';
+import { MusicEffectService } from './music-effect.service';
 
-export const AppEffects = [
-  AuthEffectService,
-  MusicEffectService
-];
+export const AppEffects = [AuthEffectService, MusicEffectService];

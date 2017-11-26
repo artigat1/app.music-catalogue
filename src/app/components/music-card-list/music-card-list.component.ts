@@ -1,35 +1,30 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import {Music} from '../../shared/interfaces';
+import { Music } from '@shared/interfaces';
 
 @Component({
-  selector: 'music-card-list',
-  templateUrl: './music-card-list.component.html',
-  styleUrls: ['./music-card-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'music-card-list',
+    templateUrl: './music-card-list.component.html',
+    styleUrls: ['./music-card-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MusicCardListComponent {
+    @Input() music: Music[];
 
-  @Input()
-  music: Music[];
+    @Input() isLoggedIn: boolean;
 
-  @Input()
-  isLoggedIn: boolean;
+    @Input() isAdmin: boolean;
 
-  @Input()
-  isAdmin: boolean;
+    /**
+     * Should the card be displayed.
+     * If the recording date is set, then only logged in user's can see the card.
+     * @returns {boolean}
+     */
+    displayCard(music: Music): boolean {
+        if (music.recordingDate) {
+            return !!this.isLoggedIn;
+        }
 
-  /**
-   * Should the card be displayed.
-   * If the recording date is set, then only logged in user's can see the card.
-   * @returns {boolean}
-   */
-  displayCard(music: Music): boolean {
-    if (music.recordingDate) {
-      return !!(this.isLoggedIn);
+        return true;
     }
-
-    return true;
-  }
-
 }

@@ -1,17 +1,17 @@
-import {Action} from '@ngrx/store/store';
+import { Action } from '@ngrx/store/store';
 
-import {type} from '../type-cache';
-import {ActionWithPayload} from '../action-with-payload';
+import { type } from '../type-cache';
+import { ActionWithPayload } from '../action-with-payload';
 import * as firebase from 'firebase';
 
 export const Types = {
-  AUTHENTICATE: type('[auth] Authenticate user'),
-  AUTHENTICATED: type('[auth] User authenticated'),
-  AUTHENTICATE_ERROR: type('[auth] Authenticate user error'),
-  SET_AUTHENTICATED_USER: type('[auth] Set authenticated user'),
-  SIGN_OUT: type('[auth] Sign out'),
-  SIGN_OUT_SUCCESS: type('[auth] Sign out success'),
-  SIGN_OUT_ERROR: type('[auth] Sign out error')
+    AUTHENTICATE: type('[auth] Authenticate user'),
+    AUTHENTICATED: type('[auth] User authenticated'),
+    AUTHENTICATE_ERROR: type('[auth] Authenticate user error'),
+    SET_AUTHENTICATED_USER: type('[auth] Set authenticated user'),
+    SIGN_OUT: type('[auth] Sign out'),
+    SIGN_OUT_SUCCESS: type('[auth] Sign out success'),
+    SIGN_OUT_ERROR: type('[auth] Sign out error'),
 };
 
 /**
@@ -19,8 +19,8 @@ export const Types = {
  * @interface
  */
 export interface AuthenticateRequest {
-  email: string;
-  password: string;
+    email: string;
+    password: string;
 }
 
 /**
@@ -31,10 +31,9 @@ export interface AuthenticateRequest {
  * @see AuthenticateRequest
  */
 export class Authenticate implements ActionWithPayload<AuthenticateRequest> {
-  readonly type = Types.AUTHENTICATE;
+    readonly type = Types.AUTHENTICATE;
 
-  constructor(public payload: AuthenticateRequest) {
-  }
+    constructor(public payload: AuthenticateRequest) {}
 }
 
 /**
@@ -43,7 +42,7 @@ export class Authenticate implements ActionWithPayload<AuthenticateRequest> {
  * @implements {Action}
  */
 export class Authenticated implements Action {
-  readonly type = Types.AUTHENTICATED;
+    readonly type = Types.AUTHENTICATED;
 }
 
 /**
@@ -53,10 +52,9 @@ export class Authenticated implements Action {
  * @constructor takes the error message {string} as the payload.
  */
 export class AuthenticateError implements ActionWithPayload<string> {
-  readonly type = Types.AUTHENTICATE_ERROR;
+    readonly type = Types.AUTHENTICATE_ERROR;
 
-  constructor(public payload: string) {
-  }
+    constructor(public payload: string) {}
 }
 
 /**
@@ -66,10 +64,9 @@ export class AuthenticateError implements ActionWithPayload<string> {
  * @constructor takes the firebase User {firebase.User} as the payload.
  */
 export class SetAuthenticatedUser implements ActionWithPayload<firebase.User> {
-  readonly type = Types.SET_AUTHENTICATED_USER;
+    readonly type = Types.SET_AUTHENTICATED_USER;
 
-  constructor(public payload: firebase.User) {
-  }
+    constructor(public payload: firebase.User) {}
 }
 
 /**
@@ -78,7 +75,7 @@ export class SetAuthenticatedUser implements ActionWithPayload<firebase.User> {
  * @implements {Action}
  */
 export class SignOut implements Action {
-  readonly type = Types.SIGN_OUT;
+    readonly type = Types.SIGN_OUT;
 }
 
 /**
@@ -87,7 +84,7 @@ export class SignOut implements Action {
  * @implements {Action}
  */
 export class SignOutSuccess implements Action {
-  readonly type = Types.SIGN_OUT_SUCCESS;
+    readonly type = Types.SIGN_OUT_SUCCESS;
 }
 
 /**
@@ -97,20 +94,20 @@ export class SignOutSuccess implements Action {
  * @constructor takes the error message {string} as the payload.
  */
 export class SignOutError implements ActionWithPayload<string> {
-  readonly type = Types.SIGN_OUT_ERROR;
+    readonly type = Types.SIGN_OUT_ERROR;
 
-  constructor(public payload: string) {
-  }
+    constructor(public payload: string) {}
 }
 
 /**
  * Actions type.
  * @type {Actions}
  */
-export type Actions = Authenticate
-  | Authenticated
-  | AuthenticateError
-  | SetAuthenticatedUser
-  | SignOut
-  | SignOutSuccess
-  | SignOutError;
+export type Actions =
+    Authenticate
+    | Authenticated
+    | AuthenticateError
+    | SetAuthenticatedUser
+    | SignOut
+    | SignOutSuccess
+    | SignOutError;

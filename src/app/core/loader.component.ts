@@ -1,18 +1,15 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'note-loader',
-  template: `
+    selector: 'note-loader',
+    template: `
     <div class="notes-loader" *ngIf="visible">
       <div class="note"></div>
     </div>
   `,
-  styles: [],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    styles: [],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoaderComponent {
-
-  @Input()
-  visible: boolean;
-
+    @Input() visible: boolean;
 }

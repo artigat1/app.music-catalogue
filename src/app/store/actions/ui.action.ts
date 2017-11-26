@@ -1,8 +1,8 @@
-import {type} from '../type-cache';
-import {ActionWithPayload} from '../action-with-payload';
+import { type } from '../type-cache';
+import { ActionWithPayload } from '../action-with-payload';
 
 export const Types = {
-  LOADING: type('[ui] loading')
+    LOADING: type('[ui] loading'),
 };
 
 /**
@@ -12,10 +12,9 @@ export const Types = {
  * @constructor takes the loading status {boolean} as the payload.
  */
 export class Loading implements ActionWithPayload<boolean> {
-  readonly type = Types.LOADING;
+    readonly type = Types.LOADING;
 
-  constructor(public payload: boolean) {
-  }
+    constructor(public payload: boolean) {}
 }
 
 /**
